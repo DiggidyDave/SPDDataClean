@@ -41,7 +41,7 @@ def applySpecialRewriteRules(blockName):
         print("Rewriting block name from '%s' to '%s'" % (blockName, result))
     return result
 
-def warnOnUnkonwnPattern(recordBlock):
+def warnOnUnknownPattern(recordBlock):
     blockPattern = '[0-9]{1,}XX BLOCK OF '
 
 
@@ -74,7 +74,7 @@ def cleanupFile(path):
         if curRecordBlockName == None:
             continue
 
-        warnOnUnkonwnPattern(curRecordBlockName)
+        warnOnUnknownPattern(curRecordBlockName)
 
         if curRecordBlockName in visitedBlocks.keys():
             # we've used this exact block string as a key so use it
