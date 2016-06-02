@@ -2,12 +2,9 @@
 Scripts to cleanup Seattle Police Department (SPD) 911 response data, as exported from here:
 https://data.seattle.gov/Public-Safety/NGLNeighborhood_85_90_Aurora_Wallingford/pjbc-999y
 
-Example of how I use it:
-https://public.tableau.com/profile/dave.smith5366#!/vizhome/NorthGreenlakeCrimeJan2009-Oct2015/Dashboard1
-
-However, the script should work(-ish) for any data exported from that SPD dataset.  Additional cleanup is always
-required, sometimes just hopping into excel and looking for outliers is the easiest thing to do, but hopefully
-it can be fully automated at some point.
+That link is a filtered view, but the script should work(-ish) for any data exported from that SPD
+dataset. Additional cleanup is usually required--sometimes just hopping into excel and looking for
+outliers is the easiest thing to do--but hopefully it can be fully automated at some point.
 
 What does this script do?
 - Homogenize block string representation, so "Foo St / Bar Ave" and "Bar Ave / Foo St" become the same
@@ -17,3 +14,7 @@ What does this script do?
 - applies special rewrite rules (currently coded in applySpecialRewriteRules function below), for known badly-formatted
   block names.  They can also be discarded via this function
 - when I have time to do the work, it will warn about block names that appear to be non-compliant
+
+Example of how I use the cleaned up data:
+https://public.tableau.com/profile/dave.smith5366#!/vizhome/NorthGreenlakeCrimeJan2009-Oct2015/Dashboard1
+
