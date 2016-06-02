@@ -19,3 +19,7 @@ What does this script do?
 Example of how I use the cleaned up data:
 https://public.tableau.com/profile/dave.smith5366#!/vizhome/NorthGreenlakeCrimeJan2009-Oct2015/Dashboard1
 
+** TO RUN **
+1) You need to install python (version 3.x may be required, I didn't actually test it with 2) from [here](https://www.python.org/).
+2) Run the script with "python clean_spd_data.py /path/to/my_spd_data.csv"
+3) It will write out a file my_spd_data_cleaned.csv
