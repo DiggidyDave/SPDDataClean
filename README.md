@@ -1,2 +1,19 @@
 # SPDDataClean
-Scripts to cleanup SPD 911 response data
+Scripts to cleanup Seattle Police Department (SPD) 911 response data, as exported from here:
+https://data.seattle.gov/Public-Safety/NGLNeighborhood_85_90_Aurora_Wallingford/pjbc-999y
+
+Example of how I use it:
+https://public.tableau.com/profile/dave.smith5366#!/vizhome/NorthGreenlakeCrimeJan2009-Oct2015/Dashboard1
+
+However, the script should work(-ish) for any data exported from that SPD dataset.  Additional cleanup is always
+required, sometimes just hopping into excel and looking for outliers is the easiest thing to do, but hopefully
+it can be fully automated at some point.
+
+What does this script do?
+- Homogenize block string representation, so "Foo St / Bar Ave" and "Bar Ave / Foo St" become the same
+  whichever we see first "wins" and all will be rewritten so that they match.  This lets them all get thrown
+  into the same LOD/bin in Tableau etc. if you put that field in play
+- All records with same block string representation will get overwritten with same lat/lon (first seen "wins" for all)
+- applies special rewrite rules (currently coded in applySpecialRewriteRules function below), for known badly-formatted
+  block names.  They can also be discarded via this function
+- when I have time to do the work, it will warn about block names that appear to be non-compliant
