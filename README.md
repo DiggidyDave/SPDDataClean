@@ -7,12 +7,13 @@ dataset. Additional cleanup is usually required--sometimes just hopping into exc
 outliers is the easiest thing to do--but hopefully it can be fully automated at some point.
 
 What does this script do?
-- Homogenize block string representation, so "Foo St / Bar Ave" and "Bar Ave / Foo St" become the same
+- Homogenize block string representation, so "Foo St / Bar Ave" and "Bar Ave / Foo St" become the same, 
   whichever we see first "wins" and all will be rewritten so that they match.  This lets them all get thrown
-  into the same LOD/bin in Tableau etc. if you put that field in play
+  into the same LOD bin in Tableau etc. if you put that field in play
 - All records with same block string representation will get overwritten with same lat/lon (first seen "wins" for all)
 - applies special rewrite rules (currently coded in applySpecialRewriteRules function below), for known badly-formatted
-  block names.  They can also be discarded via this function
+  block names.  They can also be discarded via this function.  You will want to add your own rewrite rules here to
+  replace what is there now.
 - when I have time to do the work, it will warn about block names that appear to be non-compliant
 
 Example of how I use the cleaned up data:
