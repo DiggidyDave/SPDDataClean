@@ -45,7 +45,7 @@ def warnOnUnkonwnPattern(recordBlock):
     blockPattern = '[0-9]{1,}XX BLOCK OF '
 
 
-def cleanup_file(path):
+def cleanupFile(path):
     # column indices (probably should look these up instead of hard-code)
     blockIdx = 10
     latIdx = 15
@@ -109,4 +109,4 @@ def cleanup_file(path):
 
 
 if __name__ == "__main__":
-    cleanup_file(sys.argv[1])
+    cleanupFile(sys.argv[1])
